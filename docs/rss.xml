@@ -1,5 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Mon, 10 Aug 2026 08:37:35 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>Runoob Markdown 教程</title><link>https://zhang-jichun.github.io/blog/post/Runoob%20Markdown%20-jiao-cheng.html</link><description>## Markdown 教程
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Mon, 10 Aug 2026 09:26:27 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>算法班第一讲</title><link>https://zhang-jichun.github.io/blog/post/suan-fa-ban-di-yi-jiang.html</link><description>* 准备面试时候python语言最有优势
+* 原题 + 套路 + 固定的 follow up
+* 面试交流的时候可以讲具体的例子
+* 面试官提出问题后，首先要理解问题并确认问题的边界，可以向面试官呈现一下对于问题的理解
+
+40分钟。</description><guid isPermaLink="true">https://zhang-jichun.github.io/blog/post/suan-fa-ban-di-yi-jiang.html</guid><pubDate>Mon, 10 Aug 2026 09:25:54 +0000</pubDate></item><item><title>Runoob Markdown 教程</title><link>https://zhang-jichun.github.io/blog/post/Runoob%20Markdown%20-jiao-cheng.html</link><description>## Markdown 教程
 https://www.runoob.com/markdown/md-tutorial.html
 
 ## Markdown 编辑器
