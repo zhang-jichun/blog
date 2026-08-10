@@ -4,6 +4,6 @@
     "avatarUrl":"https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp",
     "GMEEK_VERSION":"last",
     "themeMode":"manual",
-    "dayTheme":"light_high_contrast",
-    "nightTheme":"dark_high_contrast"
+    "dayTheme":"light_colorblind",
+    "nightTheme":"dark_colorblind"
 }
