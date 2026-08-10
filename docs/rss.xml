@@ -1,5 +1,111 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Mon, 10 Aug 2026 06:19:52 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>【Gmeek进阶】文章插入html标签</title><link>https://zhang-jichun.github.io/blog/post/%E3%80%90Gmeek-jin-jie-%E3%80%91-wen-zhang-cha-ru-html-biao-qian.html</link><description>## 原文 https://blog.meekdai.com/post/%E3%80%90Gmeek-jin-jie-%E3%80%91-wen-zhang-cha-ru-html-biao-qian.html
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Mon, 10 Aug 2026 08:37:35 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>Runoob Markdown 教程</title><link>https://zhang-jichun.github.io/blog/post/Runoob%20Markdown%20-jiao-cheng.html</link><description>## Markdown 教程
+https://www.runoob.com/markdown/md-tutorial.html
+
+## Markdown 编辑器
+vscode 可以左侧编辑右侧预览
+
+## 创建第一个 Markdown 文件
+- 掌握基本语法
+- 了解应用场景
+- 能够独立创作文档
+
+'-'与'*'加上空格可以绘制段落起始点
+
+## Markdown 标题
+# 一级标题 1#
+## 二级标题 2#
+### 三级标题 3#
+#### 四级标题 4#
+##### 五级标题 5#
+###### 六级标题 6#
+注意标题符号#与标题之间有空格
+
+## Markdown 文本格式
+段落的换行是使用两个以上空格加上回车  
+也可以在段落后面使用一个空行来表示重新开始一个段落  
+
+粗体语法：使用两个星号 ** 或两个下划线 __ 包围文字  
+这是 **粗体文字** 使用星号  
+这是 __粗体文字__ 使用下划线  
+
+斜体语法：使用一个星号 * 或一个下划线 _ 包围文字  
+这是 *斜体文字* 使用星号  
+这是 _斜体文字_ 使用下划线  
+
+粗斜体组合：使用三个星号 *** 或三个下划线 ___  
+*斜体文本*  
+_斜体文本_  
+**粗体文本**  
+__粗体文本__  
+***粗斜体文本***  
+___粗斜体文本___  
+
+推荐使用星号 * 而不是下划线 _，因为星号在各种 Markdown 解析器中兼容性更好  
+在中英文混合时，建议在强调符号前后加空格以提高可读性
+
+可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西  
+你也可以在星号或是减号中间插入空格
+
+--- 
+---------- 
+--- 第一种  
+---------- 第二种
+
+删除线，只需要在文字的两端加上两个波浪线 ~~ 即可  
+~~BAIDU.COM~~
+
+下划线可以通过 HTML 的 u 标签来实现   
+&lt;u&gt;带下划线文本&lt;/u&gt;  
+文本前加上 &lt;&gt;内u 文本结束加上 &lt;&gt;内/u
+
+脚注
+
+行内代码标记，用于标记文本中需要强调的内容  
+使用一个反引号包围代码  
+使用 `git commit` 命令提交代码  
+变量 `userName` 存储用户名  
+在终端中输入 `npm install` 安装依赖  
+包含反引号的代码：当代码本身包含反引号时，使用两个反引号包围  
+要显示反引号，使用 `` `code` `` 这样的格式
+
+高亮文本
+
+段落和换行  
+新段落使用空行间隔，换行则在句尾使用双空格  
+在标题和内容之间留空行  
+在列表前后留空行  
+在代码块前后留空行  
+
+## Markdown 列表
+无序列表使用星号(*)、加号(+)或是减号(-)作为列表标记，这些标记后面要添加一个空格，然后再填写内容  
+建议统一使用减号 -，因为它在视觉上更清晰
+* 第一项
+* 第二项
+* 第三项
+
+有序列表使用数字并加上 . 号来表示
+1. 第一项
+2. 第二项
+3. 第三项
+
+列表混合嵌套只需在子列表中的选项前面添加两个或四个空格即可
+1. 主要任务
+   - 子任务A
+   - 子任务B
+     1. 详细步骤1
+     2. 详细步骤2
+   - 子任务C
+2. 次要任务
+
+任务列表（复选框列表）
+- [ ] 未完成的任务
+- [x] 已完成的任务
+- [ ] 另一个未完成的任务
+
+1. 第一项
+
+   这是第一项的详细说明，需要与列表项对齐缩进。</description><guid isPermaLink="true">https://zhang-jichun.github.io/blog/post/Runoob%20Markdown%20-jiao-cheng.html</guid><pubDate>Mon, 10 Aug 2026 08:36:58 +0000</pubDate></item><item><title>【Gmeek进阶】文章插入html标签</title><link>https://zhang-jichun.github.io/blog/post/%E3%80%90Gmeek-jin-jie-%E3%80%91-wen-zhang-cha-ru-html-biao-qian.html</link><description>## 原文 https://blog.meekdai.com/post/%E3%80%90Gmeek-jin-jie-%E3%80%91-wen-zhang-cha-ru-html-biao-qian.html
 
 Github由于安全考虑，是不允许使用`iframe`等标签的，而且在issues插入的图片也会自动转换为github的地址。</description><guid isPermaLink="true">https://zhang-jichun.github.io/blog/post/%E3%80%90Gmeek-jin-jie-%E3%80%91-wen-zhang-cha-ru-html-biao-qian.html</guid><pubDate>Mon, 10 Aug 2026 06:19:25 +0000</pubDate></item><item><title>【Gmeek进阶】亮暗主题配置方式</title><link>https://zhang-jichun.github.io/blog/post/%E3%80%90Gmeek-jin-jie-%E3%80%91-liang-an-zhu-ti-pei-zhi-fang-shi.html</link><description>## 原文 https://blog.meekdai.com/post/%E3%80%90Gmeek-jin-jie-%E3%80%91-liang-an-zhu-ti-pei-zhi-fang-shi.html
 
