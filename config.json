@@ -5,6 +5,6 @@
     "GMEEK_VERSION":"last",
     "themeMode":"manual",
     "dayTheme":"light",
-    "nightTheme":"dark"
+    "nightTheme":"dark",
     "singlePage": ["about", "link", "tags"]
 }
