@@ -6,4 +6,5 @@
     "themeMode":"manual",
     "dayTheme":"light",
     "nightTheme":"dark"
+    "singlePage": ["about", "link", "tags"]
 }
