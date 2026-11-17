@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Tue, 17 Nov 2026 07:25:29 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>02_最长回文子串二解与如何提升代码质量</title><link>https://zhang-jichun.github.io/blog/post/02_-zui-chang-hui-wen-zi-chuan-er-jie-yu-ru-he-ti-sheng-dai-ma-zhi-liang.html</link><description>## [最长回文子串（双指针）](https://zhang-jichun.github.io/blog/post/zui-chang-hui-wen-zi-chuan-%EF%BC%88-shuang-zhi-zhen-%EF%BC%89.html)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Tue, 17 Nov 2026 07:28:09 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>02_最长回文子串二解与如何提升代码质量</title><link>https://zhang-jichun.github.io/blog/post/02_-zui-chang-hui-wen-zi-chuan-er-jie-yu-ru-he-ti-sheng-dai-ma-zhi-liang.html</link><description>## [最长回文子串（双指针）](https://zhang-jichun.github.io/blog/post/zui-chang-hui-wen-zi-chuan-%EF%BC%88-shuang-zhi-zhen-%EF%BC%89.html)
 ### 需要注意的点
 + string类型需要先异常检测
 + 使用有意义的变量名，不使用 l,r 这种单字符
@@ -131,7 +131,7 @@ class Solution:
             return ''
         else:
             return s[left + 1 : right]
-```。</description><guid isPermaLink="true">https://zhang-jichun.github.io/blog/post/zui-chang-hui-wen-zi-chuan-%EF%BC%88-shuang-zhi-zhen-%EF%BC%89.html</guid><pubDate>Tue, 17 Nov 2026 02:41:06 +0000</pubDate></item><item><title>算法班第一讲</title><link>https://zhang-jichun.github.io/blog/post/suan-fa-ban-di-yi-jiang.html</link><description>## 面试流程介绍
+```。</description><guid isPermaLink="true">https://zhang-jichun.github.io/blog/post/zui-chang-hui-wen-zi-chuan-%EF%BC%88-shuang-zhi-zhen-%EF%BC%89.html</guid><pubDate>Tue, 17 Nov 2026 02:41:06 +0000</pubDate></item><item><title>01_算法班第一讲</title><link>https://zhang-jichun.github.io/blog/post/01_-suan-fa-ban-di-yi-jiang.html</link><description>## 面试流程介绍
 * 准备面试时候python语言最有优势
 * 原题 + 套路 + 固定的 follow up
 * 面试交流的时候可以讲具体的例子
@@ -158,7 +158,7 @@ class Solution:
     * 耦合度高
     * 58分钟
     
-40分钟。</description><guid isPermaLink="true">https://zhang-jichun.github.io/blog/post/suan-fa-ban-di-yi-jiang.html</guid><pubDate>Mon, 10 Aug 2026 09:25:54 +0000</pubDate></item><item><title>Runoob Markdown 教程</title><link>https://zhang-jichun.github.io/blog/post/Runoob%20Markdown%20-jiao-cheng.html</link><description>## Markdown 教程
+40分钟。</description><guid isPermaLink="true">https://zhang-jichun.github.io/blog/post/01_-suan-fa-ban-di-yi-jiang.html</guid><pubDate>Mon, 10 Aug 2026 09:25:54 +0000</pubDate></item><item><title>Runoob Markdown 教程</title><link>https://zhang-jichun.github.io/blog/post/Runoob%20Markdown%20-jiao-cheng.html</link><description>## Markdown 教程
 https://www.runoob.com/markdown/md-tutorial.html
 
 ## Markdown 编辑器
