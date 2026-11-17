@@ -1,5 +1,42 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Tue, 17 Nov 2026 02:41:59 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>最长回文子串（双指针）</title><link>https://zhang-jichun.github.io/blog/post/zui-chang-hui-wen-zi-chuan-%EF%BC%88-shuang-zhi-zhen-%EF%BC%89.html</link><description>## 最长回文字串
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Tue, 17 Nov 2026 06:27:38 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>最长回文子串（动态规划）</title><link>https://zhang-jichun.github.io/blog/post/zui-chang-hui-wen-zi-chuan-%EF%BC%88-dong-tai-gui-hua-%EF%BC%89.html</link><description>+ https://www.lintcode.com/problem/200/
++ 状态转移矩阵：从第一个下标到第二个下标是否为回文串
++ 初始化矩阵：对角线代表单字符肯定都是回文串，以此为基础判断奇数长度的回文串
++ 注意两字符的中缝是回文，以此为基础判断偶数长度的回文串
+
+``` python
+class Solution:
+    '''
+    @param s: input string
+    @return: a string as the longest palindromic substring
+    '''
+    def longest_palindrome(self, s: str) -&gt; str:
+        # write your code here
+        if len(s) &lt;= 1:
+            return s
+        
+        side_length = len(s)
+        # 创建矩阵
+        is_palindrome = [[False] * side_length for _ in range(side_length)]
+        # 对角线代表单字符回文
+        for i in range(side_length):
+            is_palindrome[i][i] = True
+
+        res_left, res_right = 0, 0
+        for length in range(2, side_length + 1): # 回文长度从2开始
+            for left in range(0, side_length - length + 1):
+                right = left + length -1
+                if s[left] != s[right]: # 左右字符不同则跳过
+                    continue
+                if length == 2: # 如果长度是2则是回文
+                    is_palindrome[left][right] = True
+                    res_left, res_right = left, right
+                elif is_palindrome[left + 1][right - 1] == True: # 如果长度超过2要看减去两边的字符串是不是回文
+                    is_palindrome[left][right] = True
+                    res_left, res_right = left, right
+
+        return s[res_left : res_right + 1]
+```。</description><guid isPermaLink="true">https://zhang-jichun.github.io/blog/post/zui-chang-hui-wen-zi-chuan-%EF%BC%88-dong-tai-gui-hua-%EF%BC%89.html</guid><pubDate>Tue, 17 Nov 2026 06:27:11 +0000</pubDate></item><item><title>最长回文子串（双指针）</title><link>https://zhang-jichun.github.io/blog/post/zui-chang-hui-wen-zi-chuan-%EF%BC%88-shuang-zhi-zhen-%EF%BC%89.html</link><description>## 最长回文字串
 + https://www.lintcode.com/problem/200/
 + 双指针：从中间向两边
 + 两种情况：从单字符起始长度奇数，从双字符起始长度偶数
