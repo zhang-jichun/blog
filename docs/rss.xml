@@ -1,5 +1,77 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Tue, 17 Nov 2026 07:28:09 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>02_最长回文子串二解与如何提升代码质量</title><link>https://zhang-jichun.github.io/blog/post/02_-zui-chang-hui-wen-zi-chuan-er-jie-yu-ru-he-ti-sheng-dai-ma-zhi-liang.html</link><description>## [最长回文子串（双指针）](https://zhang-jichun.github.io/blog/post/zui-chang-hui-wen-zi-chuan-%EF%BC%88-shuang-zhi-zhen-%EF%BC%89.html)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Thu, 19 Nov 2026 03:09:17 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>03_字符串查找（滚动哈希）</title><link>https://zhang-jichun.github.io/blog/post/03_-zi-fu-chuan-cha-zhao-%EF%BC%88-gun-dong-ha-xi-%EF%BC%89.html</link><description>+ https://www.lintcode.com/problem/594/
++ 字符串查找的O(n+m)解法
++ 滚动哈希算法，也叫Rabin-Karp
++ 31是进位的经验值，不容易产生哈希冲突
++ 在容易超限的地方注意 %BASE
+``` python
+class Solution:
+    '''
+    @param source: 
+    @param target: 
+    @return: return the index
+    '''
+    def str_str2(self, source: str, target: str) -&gt; int:
+        # Write your code here
+        if len(target) &lt;= 0:
+            return 0
+        if len(source) &lt;= 0 or len(source) &lt; len(target):
+            return -1
+
+        BASE = 1000000007 # 工程上常用的大质数，中间8个0
+        POWER = 1
+        for _ in range(len(target)):
+            POWER = (POWER * 31) % BASE # 当计算哈希需要删除左侧字符时，该字符需要乘的数
+
+        temp_hash = 0
+        target_hash = 0
+        for i in range(len(source)):
+            if i &lt; len(target) - 1: # 只向右计算哈希
+                temp_hash = (temp_hash * 31 + (ord(source[i]) - ord('a'))) % BASE
+                target_hash = (target_hash * 31 + (ord(target[i]) - ord('a'))) % BASE
+                continue
+            elif i == len(target) - 1: # target哈希首次计算完成，进行第一次字符串比对
+                temp_hash = (temp_hash * 31 + (ord(source[i]) - ord('a'))) % BASE
+                target_hash = (target_hash * 31 + (ord(target[i]) - ord('a'))) % BASE
+                if temp_hash == target_hash and source[0 : i + 1] == target:
+                    return 0
+            else: # source的字符窗口向右滑动，右进左出
+                temp_hash = (temp_hash * 31 + (ord(source[i]) - ord('a'))) % BASE # 右进
+                temp_hash = (temp_hash + BASE - (ord(source[i - len(target)]) - ord('a')) * POWER % BASE) % BASE # 左出
+                if temp_hash == target_hash and source[i + 1 - len(target) : i + 1] == target:
+                    return i + 1 - len(target)
+            
+        return -1
+```
+
+
+---
++ www.lintcode.com/problem/13/
++ 字符串查找的On2解法
++ 注意非法输入与边界下标
+``` python
+class Solution:
+    '''
+    @param source: 
+    @param target: 
+    @return: return the index
+    '''
+    def str_str(self, source: str, target: str) -&gt; int:
+        # Write your code here
+        if len(target) &lt;= 0:
+            return 0
+        if len(source) &lt;= 0 or len(source) &lt; len(target):
+            return -1
+
+        for i in range(len(source) - len(target) + 1):
+            for j in range(len(target)):
+                if source[i + j] != target[j]:
+                    break
+                if j == len(target) - 1:
+                    return i
+        
+        return -1
+```。</description><guid isPermaLink="true">https://zhang-jichun.github.io/blog/post/03_-zi-fu-chuan-cha-zhao-%EF%BC%88-gun-dong-ha-xi-%EF%BC%89.html</guid><pubDate>Thu, 19 Nov 2026 03:08:44 +0000</pubDate></item><item><title>02_最长回文子串二解与如何提升代码质量</title><link>https://zhang-jichun.github.io/blog/post/02_-zui-chang-hui-wen-zi-chuan-er-jie-yu-ru-he-ti-sheng-dai-ma-zhi-liang.html</link><description>## [最长回文子串（双指针）](https://zhang-jichun.github.io/blog/post/zui-chang-hui-wen-zi-chuan-%EF%BC%88-shuang-zhi-zhen-%EF%BC%89.html)
 ### 需要注意的点
 + string类型需要先异常检测
 + 使用有意义的变量名，不使用 l,r 这种单字符
