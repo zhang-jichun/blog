@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Wed, 25 Nov 2026 09:33:07 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>有效回文串2（双指针）</title><link>https://zhang-jichun.github.io/blog/post/you-xiao-hui-wen-chuan-2%EF%BC%88-shuang-zhi-zhen-%EF%BC%89.html</link><description>+ www.lintcode.com/problem/891/
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Wed, 25 Nov 2026 09:37:43 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>有效回文串2（双指针）</title><link>https://zhang-jichun.github.io/blog/post/you-xiao-hui-wen-chuan-2%EF%BC%88-shuang-zhi-zhen-%EF%BC%89.html</link><description>+ www.lintcode.com/problem/891/
 + 相向双指针
 + 写函数判断一段子字符是否为回文串
     + 考虑左右指针相遇的情况，也就是单字符或者空串 
@@ -8,9 +8,9 @@
 + 主函数 valid_palindrome
     + 第一次调用 is_palindrome 看整体是否回文
     + 如果整体不是回文，则找到差异字符
-        + 左右各跳过一个字符再调用 is_palindrome
-        + 如果存在子回文串，则跳过一个字符整体也是回文串
-        + 如果不存在子回文串，则跳过一个字符整体也不是回文串
+        + 左右分别跳过一个字符再调用 is_palindrome
+        + 如果是子回文串，则跳过一个字符整体也是回文串
+        + 如果不是子回文串，则跳过一个字符整体也不是回文串
 ``` python
 class Solution:
     '''
