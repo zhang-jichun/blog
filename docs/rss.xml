@@ -1,5 +1,54 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Thu, 19 Nov 2026 03:09:17 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>03_字符串查找（滚动哈希）</title><link>https://zhang-jichun.github.io/blog/post/03_-zi-fu-chuan-cha-zhao-%EF%BC%88-gun-dong-ha-xi-%EF%BC%89.html</link><description>+ https://www.lintcode.com/problem/594/
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Wed, 25 Nov 2026 08:31:04 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>有效回文串（双指针）</title><link>https://zhang-jichun.github.io/blog/post/you-xiao-hui-wen-chuan-%EF%BC%88-shuang-zhi-zhen-%EF%BC%89.html</link><description>+ www.lintcode.com/problem/415/
++ 相向双指针
++ 判断合法字符的函数 .isdigit() .isalpha()
++ 考虑特殊情况，排除非法字符
++ 跳出循环的四种情况
+    + 在排除了非法字符后，左右相遇了
+    + 左右未相遇，且字符相同，左右各走一步，然后相遇了
+    + 左右未相遇，且字符相同，左右各走一步，仍未相遇
+    + 左右未相遇，且字符不同
+``` python
+class Solution:
+    '''
+    @param s: A string
+    @return: Whether the string is a valid palindrome
+    '''
+    def is_valid(self, char):
+        if char.isdigit() or char.isalpha():
+            return True
+        return False
+
+
+    def is_palindrome(self, s: str) -&gt; bool:
+        # write your code here
+        if len(s) &lt;= 1:
+            return True
+        
+        left, right = 0, len(s) - 1
+        while left &lt; right:
+            # 跳过非法字符，保证left和right指向合法字符，且左右指针未相遇
+            while left &lt; right and self.is_valid(s[left]) == False:
+                left += 1
+            while left &lt; right and self.is_valid(s[right]) == False:
+                right -= 1
+            
+            # 进行一次操作后有四种情况
+            # 1.左右指针相遇，说明是回文
+            if left &gt;= right:
+                return True
+            # 左右指针未相遇，且左右字符相同，则两指针各走一步
+            elif left &lt; right and s[left].lower() == s[right].lower():
+                left += 1
+                right -= 1  
+                if left &gt;= right: # 2.走一步，相遇了
+                    return True
+                else:
+                    continue # 3.走一步，未相遇
+            # 4.左右指针未相遇，但左右字符不相同，不是回文    
+            elif left &lt; right and s[left].lower() != s[right].lower():
+                return False
+```。</description><guid isPermaLink="true">https://zhang-jichun.github.io/blog/post/you-xiao-hui-wen-chuan-%EF%BC%88-shuang-zhi-zhen-%EF%BC%89.html</guid><pubDate>Wed, 25 Nov 2026 08:30:34 +0000</pubDate></item><item><title>03_字符串查找（滚动哈希）</title><link>https://zhang-jichun.github.io/blog/post/03_-zi-fu-chuan-cha-zhao-%EF%BC%88-gun-dong-ha-xi-%EF%BC%89.html</link><description>+ https://www.lintcode.com/problem/594/
 + 字符串查找的O(n+m)解法
 + 滚动哈希算法，也叫Rabin-Karp
 + 31是进位的经验值，不容易产生哈希冲突
