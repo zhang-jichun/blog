@@ -1,5 +1,70 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Wed, 25 Nov 2026 09:37:43 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>有效回文串2（双指针）</title><link>https://zhang-jichun.github.io/blog/post/you-xiao-hui-wen-chuan-2%EF%BC%88-shuang-zhi-zhen-%EF%BC%89.html</link><description>+ www.lintcode.com/problem/891/
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Fri, 27 Nov 2026 01:11:10 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>两数之和（哈希表法与双指针法）</title><link>https://zhang-jichun.github.io/blog/post/liang-shu-zhi-he-%EF%BC%88-ha-xi-biao-fa-yu-shuang-zhi-zhen-fa-%EF%BC%89.html</link><description>+ 哈希表法
++ 遍历列表，把值作为键，把下标作为值，添加到字典中
++ 因为列表中值是唯一的，所以可以类比成哈希值
+
+``` python
+from typing import (
+    List,
+)
+
+class Solution:
+    '''
+    @param numbers: An array of Integer
+    @param target: target = numbers[index1] + numbers[index2]
+    @return: [index1, index2] (index1 &lt; index2)
+    '''
+    def two_sum(self, numbers: List[int], target: int) -&gt; List[int]:
+        # write your code here
+        if len(numbers) &lt;= 1: # 特殊情况
+            return [-1, -1]
+
+        temp_dict = dict()
+        for i, num in enumerate(numbers): # 遍历下标和值
+            if target - num in temp_dict: # 如果字典中存在值，使得新值与存在的值和为target
+                return [temp_dict[target - num], i] # 返回下标
+            else:
+                temp_dict[num] = i # 不存在满足条件的值，则该值加入字典
+
+        return [-1, -1]
+```
+
+---
++ 相向双指针
++ nums = [(num, i) for i, num in enumerate(numbers)] 把值和下标组成元组，再按照值排序
++ 左右指针向内缩紧找到满足条件的值，值和下标组成的元组进而找到下标
++ sorted() 结果下标再排序
+
+``` python
+from typing import (
+    List,
+)
+
+class Solution:
+    '''
+    @param numbers: An array of Integer
+    @param target: target = numbers[index1] + numbers[index2]
+    @return: [index1, index2] (index1 &lt; index2)
+    '''
+    def two_sum(self, numbers: List[int], target: int) -&gt; List[int]:
+        # write your code here
+        if len(numbers) &lt;= 1: # 特殊情况
+            return [-1, -1]
+
+        nums = [(num, i) for i, num in enumerate(numbers)]
+        nums.sort()
+
+        left, right = 0, len(nums) - 1
+        while left &lt; right:
+            if nums[left][0] + nums[right][0] == target:
+                return sorted([nums[left][1], nums[right][1]])
+            elif nums[left][0] + nums[right][0] &gt; target:
+                right -= 1
+            elif nums[left][0] + nums[right][0] &lt; target:
+                left += 1
+
+        return [-1, -1]
+```。</description><guid isPermaLink="true">https://zhang-jichun.github.io/blog/post/liang-shu-zhi-he-%EF%BC%88-ha-xi-biao-fa-yu-shuang-zhi-zhen-fa-%EF%BC%89.html</guid><pubDate>Fri, 27 Nov 2026 01:10:42 +0000</pubDate></item><item><title>有效回文串2（双指针）</title><link>https://zhang-jichun.github.io/blog/post/you-xiao-hui-wen-chuan-2%EF%BC%88-shuang-zhi-zhen-%EF%BC%89.html</link><description>+ www.lintcode.com/problem/891/
 + 相向双指针
 + 写函数判断一段子字符是否为回文串
     + 考虑左右指针相遇的情况，也就是单字符或者空串 
