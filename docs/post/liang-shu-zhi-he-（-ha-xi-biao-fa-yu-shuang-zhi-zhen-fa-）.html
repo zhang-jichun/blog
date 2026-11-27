@@ -62,13 +62,13 @@ class Solution:
         if len(numbers) <= 1: # 特殊情况
             return [-1, -1]
 
-        nums = [(num, i) for i, num in enumerate(numbers)]
+        nums = [(num, i) for i, num in enumerate(numbers)] # 值与下标组成元组，再按值排序
         nums.sort()
 
         left, right = 0, len(nums) - 1
         while left < right:
             if nums[left][0] + nums[right][0] == target:
-                return sorted([nums[left][1], nums[right][1]])
+                return sorted([nums[left][1], nums[right][1]]) # 结果下标排序
             elif nums[left][0] + nums[right][0] > target:
                 right -= 1
             elif nums[left][0] + nums[right][0] < target:
@@ -129,13 +129,13 @@ class Solution:
         if len(numbers) <= 1: # 特殊情况
             return [-1, -1]
 
-        nums = [(num, i) for i, num in enumerate(numbers)]
+        nums = [(num, i) for i, num in enumerate(numbers)] # 值与下标组成元组，再按值排序
         nums.sort()
 
         left, right = 0, len(nums) - 1
         while left < right:
             if nums[left][0] + nums[right][0] == target:
-                return sorted([nums[left][1], nums[right][1]])
+                return sorted([nums[left][1], nums[right][1]]) # 结果下标排序
             elif nums[left][0] + nums[right][0] > target:
                 right -= 1
             elif nums[left][0] + nums[right][0] < target:
@@ -263,13 +263,13 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         <span class="pl-k">if</span> <span class="pl-en">len</span>(<span class="pl-s1">numbers</span>) <span class="pl-c1">&lt;=</span> <span class="pl-c1">1</span>: <span class="pl-c"># 特殊情况</span>
             <span class="pl-k">return</span> [<span class="pl-c1">-</span><span class="pl-c1">1</span>, <span class="pl-c1">-</span><span class="pl-c1">1</span>]
 
-        <span class="pl-s1">nums</span> <span class="pl-c1">=</span> [(<span class="pl-s1">num</span>, <span class="pl-s1">i</span>) <span class="pl-k">for</span> <span class="pl-s1">i</span>, <span class="pl-s1">num</span> <span class="pl-c1">in</span> <span class="pl-en">enumerate</span>(<span class="pl-s1">numbers</span>)]
+        <span class="pl-s1">nums</span> <span class="pl-c1">=</span> [(<span class="pl-s1">num</span>, <span class="pl-s1">i</span>) <span class="pl-k">for</span> <span class="pl-s1">i</span>, <span class="pl-s1">num</span> <span class="pl-c1">in</span> <span class="pl-en">enumerate</span>(<span class="pl-s1">numbers</span>)] <span class="pl-c"># 值与下标组成元组，再按值排序</span>
         <span class="pl-s1">nums</span>.<span class="pl-c1">sort</span>()
 
         <span class="pl-s1">left</span>, <span class="pl-s1">right</span> <span class="pl-c1">=</span> <span class="pl-c1">0</span>, <span class="pl-en">len</span>(<span class="pl-s1">nums</span>) <span class="pl-c1">-</span> <span class="pl-c1">1</span>
         <span class="pl-k">while</span> <span class="pl-s1">left</span> <span class="pl-c1">&lt;</span> <span class="pl-s1">right</span>:
             <span class="pl-k">if</span> <span class="pl-s1">nums</span>[<span class="pl-s1">left</span>][<span class="pl-c1">0</span>] <span class="pl-c1">+</span> <span class="pl-s1">nums</span>[<span class="pl-s1">right</span>][<span class="pl-c1">0</span>] <span class="pl-c1">==</span> <span class="pl-s1">target</span>:
-                <span class="pl-k">return</span> <span class="pl-en">sorted</span>([<span class="pl-s1">nums</span>[<span class="pl-s1">left</span>][<span class="pl-c1">1</span>], <span class="pl-s1">nums</span>[<span class="pl-s1">right</span>][<span class="pl-c1">1</span>]])
+                <span class="pl-k">return</span> <span class="pl-en">sorted</span>([<span class="pl-s1">nums</span>[<span class="pl-s1">left</span>][<span class="pl-c1">1</span>], <span class="pl-s1">nums</span>[<span class="pl-s1">right</span>][<span class="pl-c1">1</span>]]) <span class="pl-c"># 结果下标排序</span>
             <span class="pl-k">elif</span> <span class="pl-s1">nums</span>[<span class="pl-s1">left</span>][<span class="pl-c1">0</span>] <span class="pl-c1">+</span> <span class="pl-s1">nums</span>[<span class="pl-s1">right</span>][<span class="pl-c1">0</span>] <span class="pl-c1">&gt;</span> <span class="pl-s1">target</span>:
                 <span class="pl-s1">right</span> <span class="pl-c1">-=</span> <span class="pl-c1">1</span>
             <span class="pl-k">elif</span> <span class="pl-s1">nums</span>[<span class="pl-s1">left</span>][<span class="pl-c1">0</span>] <span class="pl-c1">+</span> <span class="pl-s1">nums</span>[<span class="pl-s1">right</span>][<span class="pl-c1">0</span>] <span class="pl-c1">&lt;</span> <span class="pl-s1">target</span>:

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Fri, 27 Nov 2026 01:11:10 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>两数之和（哈希表法与双指针法）</title><link>https://zhang-jichun.github.io/blog/post/liang-shu-zhi-he-%EF%BC%88-ha-xi-biao-fa-yu-shuang-zhi-zhen-fa-%EF%BC%89.html</link><description>+ 哈希表法
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Fri, 27 Nov 2026 01:13:14 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>两数之和（哈希表法与双指针法）</title><link>https://zhang-jichun.github.io/blog/post/liang-shu-zhi-he-%EF%BC%88-ha-xi-biao-fa-yu-shuang-zhi-zhen-fa-%EF%BC%89.html</link><description>+ 哈希表法
 + 遍历列表，把值作为键，把下标作为值，添加到字典中
 + 因为列表中值是唯一的，所以可以类比成哈希值
 
@@ -51,13 +51,13 @@ class Solution:
         if len(numbers) &lt;= 1: # 特殊情况
             return [-1, -1]
 
-        nums = [(num, i) for i, num in enumerate(numbers)]
+        nums = [(num, i) for i, num in enumerate(numbers)] # 值与下标组成元组，再按值排序
         nums.sort()
 
         left, right = 0, len(nums) - 1
         while left &lt; right:
             if nums[left][0] + nums[right][0] == target:
-                return sorted([nums[left][1], nums[right][1]])
+                return sorted([nums[left][1], nums[right][1]]) # 结果下标排序
             elif nums[left][0] + nums[right][0] &gt; target:
                 right -= 1
             elif nums[left][0] + nums[right][0] &lt; target:
