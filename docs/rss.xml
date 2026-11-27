@@ -1,5 +1,51 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Fri, 27 Nov 2026 05:38:52 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>04_时间复杂度与双指针</title><link>https://zhang-jichun.github.io/blog/post/04_-shi-jian-fu-za-du-yu-shuang-zhi-zhen.html</link><description>### 算法的四个复杂度
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Fri, 27 Nov 2026 09:19:38 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>快速排序</title><link>https://zhang-jichun.github.io/blog/post/kuai-su-pai-xu.html</link><description>+ www.lintcode.com/problem/464/
++ 快速排序时间复杂度为O(nlogn)
++ 快排退化：每次分区都极度不平衡，pivot 总是当前子数组的最小值或最大值，导致一边 0 个元素、另一边 n-1 个，递归深度变成 n，每层做 O(n) 的工作，总复杂度 O(n²)
++ 在 left &lt;= right 时仍然能进入循环，是为了确保退出循环时left与right彻底分开，使得后续子快排不会占据相同元素
++ ls[left] &lt; pivot 和 ls[right] &gt; piovt
+    + 如果加上等于，当 pivot 恰好是数组的最小值时，分区会完全失效，递归范围不缩小，直接死循环
+    + 举例 [3, 2, 2] 如果 ls[right] &gt;= pivot，那么 right 会一直走到 -1下标处，导致死循环
+
+``` python
+from typing import (
+    List,
+)
+
+class Solution:
+    '''
+    @param a: an integer array
+    @return: nothing
+    '''
+    def sort_integers2(self, a: List[int]):
+        # write your code here
+        self.quick_sort(a, 0, len(a) - 1)
+        return
+
+
+    def quick_sort(self, ls, start, end):
+        if start &gt;= end:
+            return
+
+        left, right = start, end
+        pivot = ls[(left + right) // 2]
+        while left &lt;= right: # 退出循环时 left right 一定错开
+            while left &lt;= right and ls[left] &lt; pivot: # pivot 会拦住 left 指针
+                left += 1
+            while left &lt;= right and ls[right] &gt; pivot: # pivot 会拦住 right 指针
+                right -= 1
+            if left &lt;= right: 
+            # 两个指针一定会在列表内部被拦住，则一定会至少发生一次交换
+            # 如果左右指向相同元素再交换，则该元素不再进入排序，后续子排序变短
+            # 如果左右指向不同元素再交换，则两个子序列内至少存在一个元素，后续子排序变短
+                ls[left], ls[right] = ls[right], ls[left]
+                left += 1
+                right -= 1
+
+        self.quick_sort(ls, start, right)
+        self.quick_sort(ls, left, end)
+        return
+```。</description><guid isPermaLink="true">https://zhang-jichun.github.io/blog/post/kuai-su-pai-xu.html</guid><pubDate>Fri, 27 Nov 2026 09:16:58 +0000</pubDate></item><item><title>04_时间复杂度与双指针</title><link>https://zhang-jichun.github.io/blog/post/04_-shi-jian-fu-za-du-yu-shuang-zhi-zhen.html</link><description>### 算法的四个复杂度
 + 时间复杂度 - 核心考点
 + 空间复杂度 - 次要考点
 + 编程复杂度 - 能让人看懂
