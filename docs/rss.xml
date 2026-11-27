@@ -1,5 +1,35 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Fri, 27 Nov 2026 01:19:51 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>两数之和（哈希表法与双指针法）</title><link>https://zhang-jichun.github.io/blog/post/liang-shu-zhi-he-%EF%BC%88-ha-xi-biao-fa-yu-shuang-zhi-zhen-fa-%EF%BC%89.html</link><description>+ https://www.lintcode.com/problem/56/
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>桃园三结义</title><link>https://zhang-jichun.github.io/blog</link><description>学而时习之，不亦说乎?</description><copyright>桃园三结义</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/zhang-jichun/picx-images-hosting/raw/master/blog_imgs/liuguanzhang.lwg93gl88.webp</url><title>avatar</title><link>https://zhang-jichun.github.io/blog</link></image><lastBuildDate>Fri, 27 Nov 2026 05:38:52 +0000</lastBuildDate><managingEditor>桃园三结义</managingEditor><ttl>60</ttl><webMaster>桃园三结义</webMaster><item><title>04_时间复杂度与双指针</title><link>https://zhang-jichun.github.io/blog/post/04_-shi-jian-fu-za-du-yu-shuang-zhi-zhen.html</link><description>### 算法的四个复杂度
++ 时间复杂度 - 核心考点
++ 空间复杂度 - 次要考点
++ 编程复杂度 - 能让人看懂
++ 思维复杂度 - 能想得出来
+---
+### 时间复杂度On的算法
++ 双指针
+    + 相向双指针
+        + reverse 类型
+            + 翻转字符串
+            + 判断回文串 
+        + two sum 类型
+            + 两数之和
+            + 三数之和
+        + partition 类型
+            + 快速排序
+            + 颜色排序
++ 打擂台
++ 单调栈，单调队列
+---
+### 双指针题目
++ [有效回文串](https://zhang-jichun.github.io/blog/post/you-xiao-hui-wen-chuan-%EF%BC%88-shuang-zhi-zhen-%EF%BC%89.html)
++ [有效回文串2](https://zhang-jichun.github.io/blog/post/you-xiao-hui-wen-chuan-2%EF%BC%88-shuang-zhi-zhen-%EF%BC%89.html)
++ [两数之和](https://zhang-jichun.github.io/blog/post/liang-shu-zhi-he-%EF%BC%88-ha-xi-biao-fa-yu-shuang-zhi-zhen-fa-%EF%BC%89.html)
+---
+### two sum 面试追问
++ 如果输入数据一已排序，哪个算法更好？
+    + 双指针算法更好，不需要额外空间且时间复杂度为On
++ 如果需要返回所找的两个数在数组中的下标，哪个算法更好？
+    + hashmap方法更好，因为双指针算法需要 num 和 index 打包排序。</description><guid isPermaLink="true">https://zhang-jichun.github.io/blog/post/04_-shi-jian-fu-za-du-yu-shuang-zhi-zhen.html</guid><pubDate>Fri, 27 Nov 2026 05:35:44 +0000</pubDate></item><item><title>两数之和（哈希表法与双指针法）</title><link>https://zhang-jichun.github.io/blog/post/liang-shu-zhi-he-%EF%BC%88-ha-xi-biao-fa-yu-shuang-zhi-zhen-fa-%EF%BC%89.html</link><description>+ https://www.lintcode.com/problem/56/
 + 哈希表法
 + 遍历列表，把值作为键，把下标作为值，添加到字典中
 + 因为列表中值是唯一的，所以可以类比成哈希值
